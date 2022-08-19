@@ -3,3 +3,8 @@
   grid-template-rows: 10;
   grid-template-columns:50, 1fr ;
 }
+
+/* #singleDiv{
+  border: 10px;
+  border-style: solid;
+} */
