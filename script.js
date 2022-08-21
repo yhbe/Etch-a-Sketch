@@ -30,12 +30,14 @@ function makeGrid(size) {
     div.setAttribute("class", "gridDiv");
     container.appendChild(div);
     div.addEventListener("pointerover", colorOver);
+    //resizes boxes
     div.setAttribute("style", `height: ${cubeSize}px; width: ${cubeSize}px`);
   }
 }
 
 makeGrid(16);
 
+// removes old grid and replaces it with prompt size
 function resizeGrid() {
   let size = parseInt(
     prompt(
@@ -43,7 +45,17 @@ function resizeGrid() {
       ""
     )
   );
+  if (size < 0 || size > 100 || !parseInt(size)) {
+    alert("try a different number");
+  } else deleteGrid();
   makeGrid(size);
+}
+
+function deleteGrid() {
+  let gridDivs = document.querySelectorAll(".gridDiv");
+  gridDivs.forEach((divs) => {
+    divs.remove();
+  });
 }
 
 // colors div when hovored over
