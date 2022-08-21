@@ -20,9 +20,27 @@ body{
   display: flex;
 }
 
+#button-container{
+  width: 400px;
+  display: flex;
+  justify-content: space-around;
+}
+
 #resize-button{
   border: none;
   padding: 8px 11px;
   margin-bottom: 13px;
   font-size: large;
+}
+
+#clear-button{
+  border: none;
+  padding: 8px 11px;
+  margin-bottom: 13px;
+  font-size: large;
+  margin-left: -50px;
+}
+
+#resize-button:hover, #clear-button:hover {
+  cursor: pointer;
 }

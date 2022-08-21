@@ -16,6 +16,20 @@ button.setAttribute("id", "resize-button");
 button.innerHTML = "click here to resize the grid";
 button.addEventListener("click", resizeGrid);
 
+//creating clearGrid button
+let clearButton = document.createElement("button");
+body.appendChild(clearButton);
+clearButton.setAttribute("id", "clear-button");
+clearButton.innerHTML = "clear";
+clearButton.addEventListener("click", resetGridColor);
+
+//button container
+let buttoncontainer = document.createElement("div");
+buttoncontainer.appendChild(button);
+buttoncontainer.appendChild(clearButton);
+body.appendChild(buttoncontainer);
+buttoncontainer.setAttribute("id", "button-container");
+
 //creating container for grid & appending
 let container = document.createElement("div");
 container.setAttribute("id", "container");
@@ -35,7 +49,20 @@ function makeGrid(size) {
   }
 }
 
+//starting grid on load
 makeGrid(16);
+
+// colors div when hovored over
+function colorOver() {
+  this.style.backgroundColor = "black";
+}
+
+function resetGridColor() {
+  let resetColor = document.querySelectorAll(".gridDiv");
+  resetColor.forEach((grid) => {
+    grid.style.backgroundColor = "red";
+  });
+}
 
 // removes old grid and replaces it with prompt size
 function resizeGrid() {
@@ -56,9 +83,4 @@ function deleteGrid() {
   gridDivs.forEach((divs) => {
     divs.remove();
   });
-}
-
-// colors div when hovored over
-function colorOver() {
-  this.style.backgroundColor = "black";
 }
