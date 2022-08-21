@@ -6,21 +6,18 @@ body{
 
 
 .gridDiv{
-	height: 48px;
-	width: 48px;
 	border: 1px solid rgb(155, 155, 155);
 }
 
 #container{
   display: flex;
-  width: 800px;
+  width: 960px;
   background-color: red;
   flex-wrap: wrap;
 }
 
 #acontainer{
   display: flex;
-  gap: 20px;
 }
 
 #resize-button{

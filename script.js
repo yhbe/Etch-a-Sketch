@@ -24,11 +24,13 @@ body.appendChild(container);
 //creating grid of divs
 function makeGrid(size) {
   let dimensions = size;
+  let cubeSize = 900 / size - 2;
   for (let i = 0; i < dimensions * dimensions; i++) {
     let div = document.createElement("div");
     div.setAttribute("class", "gridDiv");
     container.appendChild(div);
     div.addEventListener("pointerover", colorOver);
+    div.setAttribute("style", `height: ${cubeSize}px; width: ${cubeSize}px`);
   }
 }
 
