@@ -1,4 +1,4 @@
-//selecting body element
+//selecting body element & creating div element
 let body = document.querySelector("body");
 
 //h1 title creation
@@ -9,6 +9,13 @@ title.setAttribute("id", "title");
 //appending h1 title to body
 body.appendChild(title);
 
+//creating resize button
+let button = document.createElement("button");
+body.appendChild(button);
+button.setAttribute("id", "resize-button");
+button.innerHTML = "click here to resize the grid";
+button.addEventListener("click", makeGrid);
+
 //creating container for grid & appending
 let container = document.createElement("div");
 container.setAttribute("id", "container");
@@ -16,7 +23,12 @@ body.appendChild(container);
 
 //creating grid of divs
 function makeGrid() {
-  for (let i = 0; i < 256; i++) {
+  let size = prompt(
+    "What dimensions would you like your grid to be? (100x100 is the maximum size allowed)",
+    ""
+  );
+  console.log(size);
+  for (let i = 0; i < size; i++) {
     let div = document.createElement("div");
     div.setAttribute("class", "gridDiv");
     container.appendChild(div);
