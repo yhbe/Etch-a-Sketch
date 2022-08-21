@@ -7,11 +7,14 @@ body{
 
 .gridDiv{
   
+	height: 48px;
+	width: 48px;
+	border: 1px solid rgb(155, 155, 155);
 }
 
 #container{
   display: flex;
-  width: 500px;
-  height: 500px; 
+  width: 800px;
   background-color: red;
+  flex-wrap: wrap;
 }

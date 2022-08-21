@@ -9,15 +9,24 @@ title.setAttribute("id", "title");
 //appending h1 title to body
 body.appendChild(title);
 
-//creating container , appending , setting styles
+//creating container for grid & appending
 let container = document.createElement("div");
 container.setAttribute("id", "container");
 body.appendChild(container);
 
-//creating divs
-for (let i = 0; i < 257; i++) {
-  let div = document.createElement("div");
-  div.setAttribute("class", "gridDiv");
-  container.appendChild(div);
-  div.innerHTML = "helo";
+//creating grid of divs
+function makeGrid() {
+  for (let i = 0; i < 256; i++) {
+    let div = document.createElement("div");
+    div.setAttribute("class", "gridDiv");
+    container.appendChild(div);
+    div.addEventListener("pointerover", colorOver);
+  }
+}
+
+makeGrid();
+
+// colors div when hovored over
+function colorOver() {
+  this.style.backgroundColor = "black";
 }
