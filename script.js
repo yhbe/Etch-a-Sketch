@@ -14,7 +14,7 @@ let button = document.createElement("button");
 body.appendChild(button);
 button.setAttribute("id", "resize-button");
 button.innerHTML = "click here to resize the grid";
-button.addEventListener("click", makeGrid);
+button.addEventListener("click", resizeGrid);
 
 //creating container for grid & appending
 let container = document.createElement("div");
@@ -22,13 +22,9 @@ container.setAttribute("id", "container");
 body.appendChild(container);
 
 //creating grid of divs
-function makeGrid() {
-  let size = prompt(
-    "What dimensions would you like your grid to be? (100x100 is the maximum size allowed)",
-    ""
-  );
-  console.log(size);
-  for (let i = 0; i < size; i++) {
+function makeGrid(size) {
+  let dimensions = size;
+  for (let i = 0; i < dimensions * dimensions; i++) {
     let div = document.createElement("div");
     div.setAttribute("class", "gridDiv");
     container.appendChild(div);
@@ -36,7 +32,17 @@ function makeGrid() {
   }
 }
 
-makeGrid();
+makeGrid(16);
+
+function resizeGrid() {
+  let size = parseInt(
+    prompt(
+      "What dimensions would you like your grid to be? (100x100 is the maximum size allowed)",
+      ""
+    )
+  );
+  makeGrid(size);
+}
 
 // colors div when hovored over
 function colorOver() {
