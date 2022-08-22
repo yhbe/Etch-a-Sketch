@@ -2,6 +2,6 @@ This project is a "Etch-a-Sketch", a computerized version of the popular drawing
 
 Javascript was used to create all the html for this project.
 
-This project starts as a 16x16 grid that scales to 100x100 whilst keeping its dimensions.
+This project starts as a 16x16 grid that scales to 100x100 whilst keeping its starting dimensions.
 
 # Etch-a-Sketch
